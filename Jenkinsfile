@@ -15,7 +15,14 @@ pipeline {
                 sh 'docker build -t charan-jenkins-hellow-world:${BUILD_NUMBER} .'
             }
         }
-
+        
+        stage('Docker login') {
+            steps {
+                echo 'Testing...'
+                sh 'docker login -u2681 -pKarthikeya@1'
+            }
+        }
+        
         stage('Docker Push') {
             steps {
                 sh "docker tag charan-jenkins-hellow-world:${BUILD_NUMBER} 2681/charan-jenkins-hellow-world:${BUILD_NUMBER}"
