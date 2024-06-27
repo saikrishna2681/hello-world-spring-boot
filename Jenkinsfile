@@ -19,14 +19,14 @@ pipeline {
         stage('Docker login') {
             steps {
                 echo 'Testing...'
-                sh 'docker login -u2681 -pKarthikeya@1'
+                sh 'acr login -udeploymentpocfe.azurecr.io -piGLi5J5tftySSyA8SozT+QlcOPfd0bzxQZ718zilEs+ACRAkX8AH'
             }
         }
         
         stage('Docker Push') {
             steps {
-                sh "docker tag charan-jenkins-hellow-world:${BUILD_NUMBER} 2681/charan-jenkins-hellow-world:${BUILD_NUMBER}"
-                sh "docker push 2681/charan-jenkins-hellow-world:${BUILD_NUMBER}"
+                sh "docker tag charan-jenkins-hellow-world:${BUILD_NUMBER} deploymentpocfe.azurecr.io/charan-jenkins-hellow-world:${BUILD_NUMBER}"
+                sh "acr push deploymentpocfe.azurecr.io/charan-jenkins-hellow-world:${BUILD_NUMBER}"
             }
         }
     }
