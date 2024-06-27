@@ -12,13 +12,14 @@ pipeline {
         stage('Docker build') {
             steps {
                 echo 'Testing...'
-                sh 'docker build -t charan-jenkins-hellow-world::${BUILD_NUMBER} .'
+                sh 'docker build -t charan-jenkins-hellow-world:${BUILD_NUMBER} .'
             }
         }
 
         stage('Docker Push') {
             steps {
-               echo "Docker Push"
+                sh "docker tag charan-jenkins-hellow-world:${BUILD_NUMBER} 2681/charan-jenkins-hellow-world:${BUILD_NUMBER}"
+                sh "docker push 2681/charan-jenkins-hellow-world:${BUILD_NUMBER}"
             }
         }
     }
