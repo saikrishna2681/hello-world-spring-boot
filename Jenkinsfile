@@ -19,7 +19,7 @@ pipeline {
         stage('Docker login') {
             steps {
                 echo 'Testing...'
-                sh 'acr login -udeploymentpocfe.azurecr.io -piGLi5J5tftySSyA8SozT+QlcOPfd0bzxQZ718zilEs+ACRAkX8AH'
+                sh 'az login -u v-porcha@synergyazuregmail.onmicrosoft.com -p Charan123 --tenant 3423540b-7da2-46ce-b1a7-43a8d1570829'
             }
         }
         
