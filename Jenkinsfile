@@ -19,7 +19,7 @@ pipeline {
         stage('Docker login') {
             steps {
                 echo 'Testing...'
-                sh 'az login -u v-porcha@synergyazuregmail.onmicrosoft.com -p Charan@123 --tenant 3423540b-7da2-46ce-b1a7-43a8d1570829'
+                sh 'az login -u v-porcha@synergyazuregmail.onmicrosoft.com -p Charan123 --tenant 3423540b-7da2-46ce-b1a7-43a8d1570829'
             }
         }
         
